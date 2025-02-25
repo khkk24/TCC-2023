@@ -1,0 +1,158 @@
+\documentclass[defesa,oneside,brazilian,english]{ppginf}
+
+\include{packages}
+
+\makeatletter
+\g@addto@macro\@floatboxreset{\centering}
+\makeatother
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+%\usepackage[brazilian]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+%\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+%\usepackage{float}
+
+
+%\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\begin{document}
+
+
+
+\title{Analise crítica dos limites do Blockchain em relacão a escalabilidade e capacidade de processamento de transacões em grande escala}
+\author{Kokouvi Hola Kanyi Kodjovi}
+\advisor{Eduardo Todt}
+
+% instituição
+\IfLanguageName{brazilian}
+  { \instit{UFPR}{Universidade Federal do Paraná} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \instit{UFPR}{Federal University of Paraná} }
+  { \instit{UFPR}{Universidade Federal do Paraná} }
+
+% área de concentração (default do PPGInf, não mudar)
+\IfLanguageName{brazilian}
+  { \field{Ciência da Computação} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \field{Computer Science} }
+  { \field{Ciência da Computação} }
+
+% data (só o ano)
+% \date{2023}
+
+% local
+\IfLanguageName{brazilian}
+  { \local{Curitiba PR} }
+% a Bib/UFPR exige que tudo seja em português, exceto o título :-(
+%  { \local{Curitiba PR - Brazil} }
+  { \local{Curitiba PR} }
+
+% imagem de fundo da capa (se não desejar, basta comentar)
+% \coverimage{0-iniciais/fundo-capa.jpg}
+
+%=====================================================
+
+%% Descrição do documento (obviamente, descomentar somente UMA!)
+
+% Por exigência da biblioteca da UFPR, a descrição do documento deve ser
+% em português, mesmo em documentos em outras línguas. Vá entender...
+
+% tese de doutorado
+%\descr{Tese apresentada como requisito parcial à obtenção do grau de Doutor em Ciência da Computação no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% exame de qualificação de doutorado
+%\descr{Documento apresentado como requisito parcial ao exame de qualificação de Doutorado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% dissertação de mestrado
+%\descr{Dissertação apresentada como requisito parcial à obtenção do grau de Mestre em Informática no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% exame de qualificação de mestrado
+%\descr{Documento apresentado como requisito parcial ao exame de qualificação de Mestrado no Programa de Pós-Graduação em Informática, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% trabalho de conclusão de curso
+\descr{Trabalho do conclusão do curso de bacharelado  em  Ciências de computação }
+% trabalho de disciplina
+%\descr{Trabalho apresentado como requisito parcial à conclusão da disciplina XYZ no Curso de Bacharelado em XYZ, Setor de Ciências Exatas, da Universidade Federal do Paraná}
+
+% doctorate thesis
+%\descr{Thesis presented as a partial requirement for the degree of Doctor in Computer Science in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+% doctorate qualification
+%\descr{Document presented as a partial requirement for the doctoral qualification exam in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+% MSc dissertation
+%\descr{Dissertation presented as a partial requirement for the degree of Master of Sciences in Informatics in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil.}
+
+% MSc qualification
+%\descr{Document presented as a partial requirement for the Master of Sciences qualification exam in the Graduate Program in Informatics, Exact Sciences Sector, of the Federal University of Paraná, Brazil}
+
+%=====================================================
+
+% define estilo das páginas iniciais (capas, resumo, sumário, etc)
+
+\frontmatter
+\pagestyle{frontmatter}
+
+% produz capa e folha de rosto
+\titlepage
+%\maketitle
+\include{0-iniciais/resumo}
+\include{0-iniciais/abstract}
+\include{0-iniciais/acronymes}		% acrônimos, deve ser preenchida à mão
+\listoffigures				% figuras
+%\clearpage
+\listoftables	
+
+\tableofcontents			% sumário
+
+%=====================================================
+
+% define estilo do corpo do documento (capítulos e apêndices)
+\mainmatter
+\pagestyle{mainmatter}
+
+% inclusao de cada capítulo, alterar a gosto (do professor de Metodologia)
+
+\include{1-intro/texto}			% introdução
+
+\include{2-fundamentos-da-blockchain/texto}   % fondamentos 
+
+\include{3-desafios-de-escalabilidade/texto} % objetivo
+
+\include{4-Analise-de-desempenho-do-Blockchain/texto} % analise de desempenho
+
+\include{5-analise-experimental/texto}   % experimentos
+
+\include{6-discussoes/texto}
+
+\include{7-conclusao/texto}
+
+
+%\bibliographystyle{alpha}
+%\bibliography{sample}
+
+
+%=====================================================
+
+% o estilo de bibliografia é definido no arquivo packages.tex
+
+% ATENÇÃO: evite usar \cite{}; prefira \citep{} e \citet{}
+
+% base de bibliografia (BibTeX)
+
+\bibliography{referencias}
+\nocite{*}
+%\bibliography{file1,file2,file3} % se tiver mais de um arquivo BibTeX
+
+%=====================================================
+
+\end{document}
